@@ -1,0 +1,26 @@
+S,Act,Listen
+S,Act,Experiment / Practice
+S,Act,Take notes
+S,Act,Exercises
+S,Act,Operate computers / pad
+S,Act,Raise hands
+S,Act,Stand up
+S,Act,Read
+S,Act,Talk with teacher
+S,Act,Feedback to teacher
+S,Act,Peer discussion
+S,Act,Hands-on collaboration
+S,Act,Disengage
+S,Gaze,Classmate
+S,Gaze,Teacher
+S,Gaze,Blackboard
+T,Act,Ask
+T,Act,Teach / Lead in
+T,Act,Praise
+T,Act,Criticize
+T,Act,Manage
+T,Act,Demo
+T,Act,Individual Guide
+T,Act,Observe
+T,Act,Visit
+T,Act,Blackboard

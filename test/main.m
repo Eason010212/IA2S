@@ -1,0 +1,2 @@
+% [SNet,TNet,SXTest,SYTest,TXTest,TYTest,sceneTags,classNames] = train("L1-act.csv","L1-scene.csv","actTags.csv","sceneTags.csv","set.csv")
+[pred,scores,acc] = test(SNet,TNet,SXTest,SYTest,TXTest,TYTest,sceneTags,classNames)
