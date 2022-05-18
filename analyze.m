@@ -15,7 +15,7 @@ function [analyzeRes] = analyze(X,Y,Net,minProb,minLength,sceneTags)
     %   minProb: Minimum confidence probability. When the probability that 
     %            the prediction result is an actual scene category is less 
     %            than this value, it is judged to be abnormal activity.
-    %   minLength: The shortest discriminant length. When the abnormal 
+    %   minLength: The shortest abnormal length. When the abnormal 
     %              activity continuously appears in more than the number of
     %              frames exceeding this value, the abnormal activity is 
     %              considered as output, otherwise it is still judged as 
