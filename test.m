@@ -1,7 +1,31 @@
-function [pred,scores,acc]= test(SNet,TNet,SXTest,SYTest,TXTest,TYTest,sceneTags,classNames)
+function [preds,acc] = test(SNet,TNet,SXTest,SYTest,TXTest,TYTest,sceneTags,classNames)
+    
+    % Function: Use trained network and test set to test accuracy.
 
+    % Usage: [predResults,acc] = test(SNet,TNet,SXTest,SYTest,TXTest,TYTest,
+    %                     sceneTags,classNames)
+    
+    % Author: Song Yishen @ CIT Lab
+
+    % Input:
+    %   SNet: Trained LSTM Net using student sequences.
+    %   TNet: Trained LSTM Net using teacher sequences.
+    %   SXTest: Student test set (Activities).
+    %   SYTest: Student test set (Scenes).
+    %   TXTest: Teacher test set (Activities).
+    %   TYTest: Teacher test set (Scenes).
+    %   SceneTags: Scene tags array.
+    %   ClassNames: Classes array.
+
+    % Output:
+    %   predResults: Predicted results on test sets.
+    %   acc: Accuracy array on test sets.
+    
     % Test once per class
+    preds = cell(0);
+
     totalScore = [];
+    acc = [];
     for i = 1:size(classNames,1)
         className = classNames(i,:);
 
@@ -40,7 +64,8 @@ function [pred,scores,acc]= test(SNet,TNet,SXTest,SYTest,TXTest,TYTest,sceneTags
             pred = [pred,sceneTags(find(col==max(col)),1)];
         end
         pred = categorical(pred,sceneTags);
-        acc = sum(pred == sytest)./numel(sytest);
+        preds{i,1} = pred;
+        acc = [acc;sum(pred == sytest)./numel(sytest)];
 
         % Visualize
         figure
